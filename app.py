@@ -21,6 +21,13 @@ def create_app(test_config=None):
     # ROUTES
 
     # GET /actors get actors endpoint
+      @app.route('/')
+    def get_greeting():
+        excited = os.environ['EXCITED']
+        greeting = "Hello" 
+        if excited == 'true': greeting = greeting + "!!!!!"
+        return greeting
+        
     @app.route('/actors', methods=['GET'])
     @requires_auth('get:actors')
     def retrieve_actors(self):
@@ -271,4 +278,3 @@ app = create_app()
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)
-    
