@@ -23,9 +23,10 @@ def create_app(test_config=None):
     # GET /actors get actors endpoint
       @app.route('/')
     def get_greeting():
-        excited = os.environ['EXCITED']
-        greeting = "Hello" 
-        if excited == 'true': greeting = greeting + "!!!!!"
+         let greeting = jsonify({
+            'success': True,
+            'message': "Hi"
+        }), 200
         return greeting
         
     @app.route('/actors', methods=['GET'])

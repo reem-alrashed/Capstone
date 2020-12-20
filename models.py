@@ -8,13 +8,7 @@ import os
 
 # try to get heroku DATABASE_URL env variable
 # or set default local db connection string
-database_path = os.environ.get('DATABASE_URL',
-                               "{}://{}:{}@localhost: 5432/{}".format(
-                                   database_params["dialect"],
-                                   database_params["username"],
-                                   database_params["password"],
-                                   database_params["db_name"]))
-
+database_path = "postgres://{}:{}@{}/{}".format('postgres', 'root', 'localhost:5432', database_name)
 db = SQLAlchemy()
 
 '''
@@ -197,4 +191,3 @@ class Actor(db.Model):
 
     def update(self):
         db.session.commit()
-        
