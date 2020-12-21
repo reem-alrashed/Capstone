@@ -8,7 +8,7 @@ import os
 
 # try to get heroku DATABASE_URL env variable
 # or set default local db connection string
-database_path = "postgres://{}:{}@{}/{}".format('postgres', 'root', 'localhost:5432', database_name)
+database_path = "postgres://{}:{}@{}/{}".format('root', '', 'localhost:5432', "casting_agency")
 db = SQLAlchemy()
 
 '''
