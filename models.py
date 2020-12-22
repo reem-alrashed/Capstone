@@ -1,4 +1,3 @@
-
 from sqlalchemy import Column, String, create_engine, Integer, Date
 from flask_sqlalchemy import SQLAlchemy
 from config import database_params
@@ -8,7 +7,13 @@ import os
 
 # try to get heroku DATABASE_URL env variable
 # or set default local db connection string
-database_path = "postgres://{}:{}@{}/{}".format('root', '', 'localhost:5432', "casting_agency")
+database_path = os.environ.get('DATABASE_URL',
+                               "{}://{}:{}@localhost: 5432/{}".format(
+                                   database_params["dialect"],
+                                   database_params["username"],
+                                   database_params["password"],
+                                   database_params["db_name"]))
+
 db = SQLAlchemy()
 
 '''
@@ -191,3 +196,4 @@ class Actor(db.Model):
 
     def update(self):
         db.session.commit()
+        
