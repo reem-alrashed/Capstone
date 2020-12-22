@@ -9,15 +9,8 @@ def create_app(test_config=None):
     CORS(app)
 
     @app.route('/')
-    def get_greeting():
-        excited = os.environ['EXCITED']
-        greeting = "Hello" 
-        if excited == 'true': greeting = greeting + "!!!!!"
-        return greeting
-
-    @app.route('/coolkids')
     def be_cool():
-        return "Be cool, man, be coooool! You're almost a FSND grad!"
+        return "Hi"
 
     return app
 
