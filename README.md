@@ -2,6 +2,7 @@
 ## Motivation
 Capstone is the final project for Udacity Full-Stack web developer nanondegree.
 It uses all of the learned concepts. Including using postgres, API development using Flask, Authorization, JWT authentication and deployment using Heroku.
+Hosted app link: https://capstone-fsnd-reem.herokuapp.com/
 ## Project dependencies, local development and hosting instructions
 This section will introduce you to how to run and setup the app locally.
 
