@@ -190,4 +190,22 @@ Sample response: returns the deleted movie id
 ```
 { "delete": 1, "success": true }
 ```
+### Authentication and authorization
+This API uses Auth0 for authentication, you will need to setup Auth0 application and API.  
+You need to update auth0_params variable found in config.py.
 
+
+#### Existing user roles
+##### Casting Assistant:
+- GET /actors: can get all actors
+- GET /movies: can get all movies
+##### Casting Director:
+All permissions of Casting Assistant
+- POST /actors: can create new actors
+- PATCH /actors: can update existing actors
+- PATCH /movies: can update existing movies
+- DELETE /actors: can delete actors from database
+##### Exectutive Director:
+- All permissions of Casting Director
+- POST /movies: Can create new movies
+- DELETE /movies: Can delete movies from database
