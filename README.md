@@ -16,7 +16,7 @@ $ pip install -r requirements.txt
 ```
 
 ### Local connection
-Install postgres database and run it. then update database_params variable found in config.py file as shown below:
+Install postgres database and run it. After that, update database_params variable found in config.py file as shown below:
 ```
 database_params = {
     "username": "YOUR_USERNAME",
