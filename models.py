@@ -5,8 +5,7 @@ from datetime import date
 import json
 import os
 
-# try to get heroku DATABASE_URL env variable
-# or set default local db connection string
+#  set db connection string
 database_path = os.environ.get('DATABASE_URL',
                                "{}://{}:{}@localhost: 5432/{}".format(
                                    database_params["dialect"],
@@ -38,7 +37,6 @@ db_drop_and_create_all()
 
 
 def db_drop_and_create_all():
-    #db.drop_all()
     db.create_all()
     db_populate_db()
 
